@@ -63,6 +63,8 @@ func productExceptSelf1(nums []int) []int {
 	return result
 }
 
+// time complexity => O(2n) => O(n)
+// space complexity => O(3n) => O(n)
 func productExceptSelf2(nums []int) []int {
 	length := len(nums)
 	result := make([]int, len(nums))
@@ -82,6 +84,30 @@ func productExceptSelf2(nums []int) []int {
 
 	for i := range nums {
 		result[i] = totalFromLeft[i] * totalFromRight[i]
+	}
+
+	return result
+}
+
+// time complexity => O(2n) => O(n)
+// space complexity => O(n)
+func productExceptSelf3(nums []int) []int {
+	length := len(nums)
+	result := make([]int, len(nums))
+
+	productFromLeft := 1
+
+	// [1,1,2,6]
+	// product = 24
+	for i := 0; i < length; i++ {
+		result[i] = productFromLeft
+		productFromLeft = productFromLeft * nums[i]
+	}
+
+	productFromRight := 1
+	for i := length - 1; i >= 0; i-- {
+		result[i] = productFromRight * result[i]
+		productFromRight = productFromRight * nums[i]
 	}
 
 	return result
