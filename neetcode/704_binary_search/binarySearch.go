@@ -1,6 +1,7 @@
 package binarysearch
 
 // Binary search is an efficient algorithm for finding an item from a sorted list of items.
+// time complexity = O log n
 func search(nums []int, target int) int {
 	startIdx := 0
 	endIdx := len(nums) - 1
