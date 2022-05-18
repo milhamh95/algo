@@ -34,3 +34,36 @@ func Test_decimalToBinary(t *testing.T) {
 		})
 	}
 }
+
+func Test_decimalToBinary2(t *testing.T) {
+	type args struct {
+		num int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "input 7, return 111",
+			args: args{
+				num: 7,
+			},
+			want: 111,
+		},
+		{
+			name: "input 13, return 1101",
+			args: args{
+				num: 13,
+			},
+			want: 1101,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := decimalToBinary2(tt.args.num); got != tt.want {
+				t.Errorf("decimalToBinary2() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
