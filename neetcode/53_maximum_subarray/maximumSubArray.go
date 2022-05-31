@@ -28,6 +28,22 @@ func maxSubArray(nums []int) int {
 	return maxSum
 }
 
+func maxSubArray1(nums []int) int {
+	tmpSum := 0
+	maxSum := nums[0]
+
+	for _, v := range nums {
+		tmpSum += v
+		maxSum = max(maxSum, tmpSum)
+
+		if tmpSum < 0 {
+			tmpSum = 0
+		}
+	}
+
+	return maxSum
+}
+
 func max(x, y int) int {
 	if x > y {
 		return x
