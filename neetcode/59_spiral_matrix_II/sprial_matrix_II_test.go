@@ -15,7 +15,7 @@ func Test_generateMatrix(t *testing.T) {
 		want [][]int
 	}{
 		{
-			name: "n = 3, ouput = [[1,2,3],[8,9,4],[7,6,5]]",
+			name: "n = 3, otuput = [[1,2,3],[8,9,4],[7,6,5]]",
 			args: args{
 				n: 3,
 			},
@@ -23,6 +23,15 @@ func Test_generateMatrix(t *testing.T) {
 				[]int{1, 2, 3},
 				[]int{8, 9, 4},
 				[]int{7, 6, 5},
+			},
+		},
+		{
+			name: "n = 1, output = [[1]]",
+			args: args{
+				n: 1,
+			},
+			want: [][]int{
+				[]int{1},
 			},
 		},
 	}
