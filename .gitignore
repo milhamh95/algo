@@ -192,6 +192,7 @@ Temporary Items
 # Ignore code-workspaces
 *.code-workspace
 
-.node_modules
+node_modules
+
 
 # End of https://www.toptal.com/developers/gitignore/api/go,goland,visualstudiocode,macos
